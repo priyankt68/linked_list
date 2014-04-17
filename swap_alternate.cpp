@@ -13,8 +13,16 @@
 using namespace std;
 
 
-void pushNode(struct node** headref, int data);
+void pushNode(struct node** , int );
 void printList(struct node*);
+
+/*Node definition*/
+
+struct node
+{
+	int data;
+	struct node* next;
+};
 
 
 void pushNode(struct node** headref, int data)
@@ -32,7 +40,7 @@ void printList(struct node* node)
 
 	while(node != NULL)
 	{
-		cout << node->data << ",";
+		cout << node->data << " ";
 		node= node->next;
 
 	}
