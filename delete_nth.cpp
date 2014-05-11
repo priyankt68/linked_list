@@ -1,13 +1,3 @@
-/*Program to swap alternate nodes in a given linked list
-
-1.	in:	1-2-3-4-5
-1.	out:2-1-4-3-5
-
-2.	in: 1-2-3-4-5-6
-2.	out:2-1-4-3-6-5
-
-*/
-
 
 #include <iostream>
 using namespace std;
@@ -15,7 +5,7 @@ using namespace std;
 
 void pushNode(struct node** , int );
 void printList(struct node*);
-void SwapAlternateElements(struct node*);
+void nthToLast(struct node **, int );
 
 /*Node definition*/
 
@@ -26,13 +16,15 @@ struct node
 };
 
 
-void pushNode(struct node** headref, int data)
+struct node* pushNode(struct node** headref, int data)
 {
 
 	struct node* new_node = new node;
 	new_node->data = data;
 	new_node->next = (*headref);
 	(*headref) = new_node;
+
+	return new_node;
 }
 
 void printList(struct node* node)
@@ -48,39 +40,35 @@ void printList(struct node* node)
 }
 
 
-void SwapAlternateElements(struct node **head)
-{
-	if (*head == NULL || *(head) -> next == NULL)
-		return ;
-
-	struct node *pre = **head;
-	struct node *cur = *head;
-
-	*head = cur;
-
-	while(true)
-
-
-
-
-}
-
 int main()
 {
 
-	struct node* head=NULL;
+	struct node* head = NULL;
 
 
+	pushNode(&head,1);
+	pushNode(&head,11);
+	pushNode(&head,12);
 	pushNode(&head,5);  // call by reference
 	pushNode(&head,4);
 	pushNode(&head,3);
 	pushNode(&head,2);
 	pushNode(&head,1);
+	pushNode(&head,1);
+	pushNode(&head,11);
+	pushNode(&head,12);
+	pushNode(&head,4);
+
+
+	cout << "Original List : ";
 
 	printList(head);    // call by value
 
-	SwapAlternateElements(head);
+	int n= 3;
 
+	cout << "elements after" << n << "are:" ;
+
+//	DeleteNth(&head)
 
 return 0;
 }

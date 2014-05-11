@@ -1,11 +1,5 @@
 /*Program to swap alternate nodes in a given linked list
 
-1.	in:	1-2-3-4-5
-1.	out:2-1-4-3-5
-
-2.	in: 1-2-3-4-5-6
-2.	out:2-1-4-3-6-5
-
 */
 
 
@@ -15,7 +9,6 @@ using namespace std;
 
 void pushNode(struct node** , int );
 void printList(struct node*);
-void SwapAlternateElements(struct node*);
 
 /*Node definition*/
 
@@ -47,23 +40,18 @@ void printList(struct node* node)
 	}
 }
 
-
-void SwapAlternateElements(struct node **head)
+void RemoveDuplicate(struct node* node)
 {
-	if (*head == NULL || *(head) -> next == NULL)
-		return ;
 
-	struct node *pre = **head;
-	struct node *cur = *head;
+	struct node* curr = node;
+	struct node* next = node->next;
 
-	*head = cur;
+	while(curr != NULL)
+	{
 
-	while(true)
-
-
-
-
+	}
 }
+
 
 int main()
 {
@@ -79,8 +67,7 @@ int main()
 
 	printList(head);    // call by value
 
-	SwapAlternateElements(head);
-
+	RemoveDuplicate(head);
 
 return 0;
 }
